@@ -8,8 +8,8 @@ subtitle: 我的个人网站
 description: 技术博客、日记记录
 keywords:
 author: www.zhuohc.om
-language:
-timezone:
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: icarus 
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
