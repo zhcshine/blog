@@ -11,7 +11,7 @@ tags:
 ---
 
 #### manjaro安装
-
+##### 安装postgresql
 ```
 $ git clone https://aur.archlinux.org/postgresql-9.6.git
 $ cd postgresql-9.6-git
@@ -38,7 +38,7 @@ $ sudo su postgres -l
 $ psql
 ```
 
-#### 安装postgis
+##### 安装postgis
 
 1, 安装proj4.9
 
@@ -68,6 +68,19 @@ sudo make install
 sudo ldconfig
 sudo make comments-install
 ```
+##### 创建库
+```
+# 第一件事是使用\password命令，为postgres用户设置一个密码。
+postgres=# \password postgres
+# 第二件事是创建数据库用户dbuser（刚才创建的是Linux系统用户），并设置密码。
+postgres=# CREATE USER dbuser WITH PASSWORD 'password';
+# 第三件事是创建用户数据库，这里为exampledb，并指定所有者为dbuser。
+postgres=# CREATE DATABASE exampledb OWNER dbuser;
+# 第四件事是将exampledb数据库的所有权限都赋予dbuser，否则dbuser只能登录控制台，没有数据库操作权限。
+postgres=# GRANT ALL PRIVILEGES ON DATABASE exampledb to dbuser;
+```
+
+
 #### ubuntu/centos安装
 
 [ubuntu安装](https://www.postgresql.org/download/linux/ubuntu/) [centos安装](https://www.postgresql.org/download/linux/redhat/) centos7.2 安装postgresql9.6
