@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: zhuohc.com
-subtitle: 我的个人网站
+title: Wellread
+subtitle: 饱读诗书
 description: 技术博客、日记记录
 keywords:
 author: www.zhuohc.om
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus 
+theme: next 
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,3 +81,10 @@ deploy:
   type: git
   repo: https://github.com/zhcshine/zhcshine.github.io.git
   branch: master
+
+# search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
