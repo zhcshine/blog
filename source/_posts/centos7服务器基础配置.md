@@ -756,3 +756,36 @@ php安装
     
 
 [centos7.2安装使用docker](/articles/centos7-2安装及使用docker/) [centos7.2安装使用sentry](/articles/centos7-2安装使用sentry/) [centos7.2安装使用rabbitMQ](/articles/centos7-2使用rabbitmq/) [centos7.2安装使用postgresql](/articles/postgresql常见命令/)
+
+#### centos7.2安装supervisor
+安装
+```shell
+$ sudo yum install -y supervisor
+$ systemctl enable supervisord # 开机自启动
+$ systemctl start supervisord # 启动supervisord服务
+$ systemctl status supervisord # 查看supervisord服务状态
+$ ps -ef|grep supervisord # 查看是否存在supervisord进程
+```
+配置
+```shell
+# 设置web访问
+[inet_http_server]
+port=*:9001                                                  
+username=username
+password=password 
+[include]                                                                                   │(.env-api) ➜  supervisord.d sudo vim doneself-api.ini                 
+files = supervisord.d/*.ini   # 配置文件地址
+```
+```shell
+$ vim xxx.ini
+[program:doneself-api-uwsgi]
+command = /home/doneself/code/web/.env-api/bin/uwsgi --ini /home/doneself/code/web/api/uwsgi.ini
+autostart = true
+autorestart = true
+stopsignal= QUIT
+user= doneself
+redirect_stderr=false
+stdout_logfile = /home/doneself/code/web/api/log/uwsgi_stdout.log
+stderr_logfile = /home/doneself/code/web/api/log/uwsgi_stderr.log
+```
+[其他信息](http://supervisord.org/)
