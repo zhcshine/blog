@@ -6,7 +6,7 @@ tags:
 
 #### 安装supervisor服务
 [地址](http://supervisord.org/)
-
+sudo yum install supervisor
 #### 待续
 ```shell
 $ pip3 install service_identity
