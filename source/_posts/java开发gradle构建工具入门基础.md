@@ -50,11 +50,38 @@ OS:           Linux 4.19.49-1-MANJARO amd64
 ```
 
 #### 配置gradle
+
+##### 项目配置国内源
+
 ```shell
 # 配置国内aliyun源
 repositories {
     maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     mavenCentral()
 }
+```
 
+##### 全局配置国内源
+```shell
+vim ~/.gradle/init.gradle
+```
+
+```shell
+allprojects{
+    repositories {
+        def REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public/'
+        all { ArtifactRepository repo ->
+            if(repo instanceof MavenArtifactRepository){
+                def url = repo.url.toString()
+                if (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $REPOSITORY_URL."
+                    remove repo
+                }
+            }
+        }
+        maven {
+            url REPOSITORY_URL
+        }
+    }
+}
 ```

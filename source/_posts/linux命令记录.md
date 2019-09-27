@@ -118,3 +118,18 @@ Requires.private: atk atk-bridge-2.0 wayland-client >= 1.9.91 wayland-protocols 
 Libs: -L${libdir} -lgtk-3
 Cflags: -I${includedir}/gtk-3.0
 ```
+
+#### 端口与进程
+```shell
+$ sudo netstat -nap | grep 5555  # 查看指定端口被什么应用及进程号占用
+tcp        0      0 0.0.0.0:5555            0.0.0.0:*               LISTEN      8362/python
+tcp6       0      0 :::5555                 :::*                    LISTEN      8362/python
+
+$ sudo netstat -nap | grep 8362  # 同上，查看端口号
+tcp        0      0 0.0.0.0:5555            0.0.0.0:*               LISTEN      8362/python                                       │apps                 product.sh        tmp
+tcp6       0      0 :::5555                 :::*                    LISTEN      8362/python                                       │➜  api git:(master) source .env/bin/activate
+unix  3      [ ]         STREAM     CONNECTED     75201340 8362/python                                                            │(.env) ➜  api git:(master) pwd
+unix  3      [ ]         STREAM     CONNECTED     75201341 8362/python                          
+
+$ sudo kill -s 9 pid  # 杀死进程pid
+```

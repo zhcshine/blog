@@ -9,12 +9,23 @@ date: 2016-11-09 15:19:56
 tags:
 ---
 
-### 创建项目
+#### 配置
+```shell
+# 设置代理
+$ git config --global http.proxy 'socks5://127.0.0.1:1080'
+$ git config --global https.proxy 'socks5://127.0.0.1:1080'
+# 查看配置项
+$ git config --list
+```
+
+
+
+#### 创建项目
 
     git init
     
 
-### 查看分支
+#### 查看分支
 
     E:\HKMAIN (master)
     λ git branch
@@ -27,7 +38,7 @@ tags:
       v1.2   acbf4f1 c1.2
     
 
-### 删除分支
+#### 删除分支
 
 查看未合并的分支
 
