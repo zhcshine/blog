@@ -23,3 +23,28 @@ $ mv android-sdk-linux ~/android
 # 下载 SDK并解压
 $ mv android-5.0 ~/android/android-sdk-linux/platforms
 ```
+
+#### 安装maven
+
+{% post_link java开发maven构建工具入门基础 %}
+
+
+#### 安装maven私服
+
+[Nexus的下载地址](https://www.sonatype.com/download-oss-sonatype)
+
+```shell
+# 解压后/home/zhc/nexus
+$ ./nexus/nexus-3.19.1-01/bin/nexus run  # 启动nexus
+```
+
+如果出现以下错误, 按提示安装java jdk
+```markdown
+No suitable Java Virtual Machine could be found on your system.
+```
+```shell
+# 访问地址
+http://127.0.0.1:8081/
+```
+#### 基础环境搭建
+

@@ -133,3 +133,9 @@ unix  3      [ ]         STREAM     CONNECTED     75201341 8362/python
 
 $ sudo kill -s 9 pid  # 杀死进程pid
 ```
+
+#### systemctl
+```shell
+# 可以返回systemd service文件路径
+$ sudo systemctl edit rabbitmq-server.service
+```
