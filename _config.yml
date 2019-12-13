@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 学习记录
+title: zhuohc's blog
 subtitle:
 description:
 keywords:
 author: zhuohanchang
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -73,7 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next 
+# next
+theme: cactus
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
