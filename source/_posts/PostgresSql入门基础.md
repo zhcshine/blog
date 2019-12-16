@@ -1,8 +1,5 @@
 ---
-title: postgresql入门基础
-url: 528.html
-id: 528
-comments: false
+title: PostgresSql入门基础
 categories:
   - 后端
   - 运维

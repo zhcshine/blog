@@ -1,8 +1,16 @@
 ---
-title: Centos7.2安装使用svn
+title: Svn入门基础
 date: 2019-09-09 13:28:47
 tags:
+- Svn
+categories:
+- 运维
 ---
+
+## 安装
+
+### 安装
+
 ```shell
 # 安装
 $ sudo yum install subversion
@@ -10,10 +18,28 @@ $ sudo yum install subversion
 $ which svnserve
 ```
 
+### 重启
+
+```shell
+# 关闭并重启
+sudo killall svnserve
+svnserve -d -r ~/svn
+```
+```shell
+svn --username=username co svn://svn.xxxx.com/repo0  # 克隆项目
+```
+
+## 仓库
+
+### 创建
+
 ```shell
 $ mkdir ~/svn
 $ svnadmin create ~/svn/repo0  # 创建repo0仓库
 ```
+
+### 配置
+
 ```shell
 # 配置repo0
 $ vim ~/svn/repo0/conf/svnserve.conf
@@ -22,6 +48,9 @@ auth-access = write
 password-db = ../../passwd  # 密码文件地址
 authz-db = ../../authz      # 权限认证文件地址
 ```
+
+### 密码
+
 ```shell
 # 配置密码文件
 $ vim ~/svn/passwd
@@ -35,6 +64,8 @@ dev = devpassword
 product = productpassword
 ui = uipassword
 ```
+
+### 权限
 ```shell
 # 配置权限认证文件
 $ vim ~/svn/authz
@@ -65,13 +96,4 @@ test = r
 product = wr
 ui = wr
 
-```
-
-```shell
-# 关闭并重启
-sudo killall svnserve
-svnserve -d -r ~/svn
-```
-```shell
-svn --username=username co svn://svn.xxxx.com/repo0  # 克隆项目
 ```

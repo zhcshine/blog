@@ -2,9 +2,13 @@
 title: Android开发入门基础
 date: 2019-08-21 09:48:28
 tags:
+- Android
+- Java
+categories:
+- 前端
 ---
 
-# linux安装环境
+## linux安装环境
 
 ### 安装android-studio
 ```shell

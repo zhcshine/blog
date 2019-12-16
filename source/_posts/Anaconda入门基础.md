@@ -3,9 +3,11 @@ title: Anaconda入门基础
 date: 2019-11-06 13:38:28
 tags:
 - python
+categories:
+- 后端
 ---
 
-# 安装
+## 安装
 
 ### 官方安装
 
@@ -22,7 +24,7 @@ tags:
 conda 4.7.10
 ```
 
-# 虚拟环境
+## 虚拟环境
 
 ### 创建
 ```shell
@@ -56,7 +58,7 @@ base                     /opt/anaconda
 conda remove --name <env_name> --all
 ```
 
-# 包管理
+## 包管理
 
 ### 当期环境包列表
 ```shell

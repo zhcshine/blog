@@ -2,11 +2,14 @@
 title: Docker入门基础
 date: 2019-09-27 11:07:09
 tags:
+- Docker
+categories:
+- 运维
 ---
 
-# 安装
+## 安装
 
-### centos7.2安装
+### Centos7.2
 ```shell
 # https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce
 # 卸载旧版本
@@ -30,25 +33,22 @@ $ sudo pip install docker-compose
 # 换源https://lug.ustc.edu.cn/wiki/mirrors/help/docker
 ```
 
-
 ### 配置国内镜像源
 ```shell
 $ sudo vim /etc/docker/daemon.json
 ```
-
 ```json
 {
     "registry-mirrors": ["http://hub-mirror.c.163.com"]
 }
 ```
-
 ```shell
 # 重启
 $ sudo systemctl restart docker.service
 ```
 
-```text
-常见国内源
+```markdown
+常见国内源:
 
 Docker中国 https://registry.docker-cn.com
 网易 http://hub-mirror.c.163.com
@@ -57,7 +57,7 @@ ustc  https://docker.mirrors.ustc.edu.cn
 阿里云 https://cr.console.aliyun.com/
 ```
 
-# 概念
+## 概念
 
 ### container 容器
 ```shell
@@ -74,9 +74,7 @@ $ sudo docker images
 # 删除镜像
 sudo docker rmi iamge_id
 ```
-
-
-# Dockerfile
+## Dockerfile
 
 ```shell
 # Dockerfile编写

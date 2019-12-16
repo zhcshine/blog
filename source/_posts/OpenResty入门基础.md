@@ -1,15 +1,14 @@
 ---
-title: Centos7.2安装使用openResty
-url: 579.html
-id: 579
-comments: false
-categories:
-  - 运维
-date: 2018-11-14 18:35:08
+title: OpenResty入门基础
 tags:
+- OpenResty
+categories:
+- 运维
+date: 2018-11-14 18:35:08
 ---
 
-# 安装
+## 安装
+
 ```shell
 # 安装
 $ sudo yum install pcre-devel openssl-devel gcc curl
@@ -31,6 +30,6 @@ $ nginx -s reload
 $ nginx -s stop
 ```
 
-# 配置
+## 配置
 
-> openResty的nginx和普通nginx配置一致
+> openResty的Nginx和普通Nginx配置一致

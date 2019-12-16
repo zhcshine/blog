@@ -1,8 +1,5 @@
 ---
-title: centos7配置keepalived实现高可用集群
-url: 161.html
-id: 161
-comments: false
+title: Keepalived实现高可用集群
 categories:
   - 运维
 date: 2017-04-19 14:30:29
