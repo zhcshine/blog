@@ -1,18 +1,15 @@
 ---
-title: java入门基础
-url: 499.html
-id: 499
-comments: false
+title: Java入门基础
 categories:
-  - 前端
+- 后端
 date: 2018-01-31 09:44:05
 tags:
+- Java
 ---
 
-# linux安装java开发环境
+## Java开发环境
 
-## 安装java
-
+### 安装Java
 
 下载源码
 
@@ -52,7 +49,7 @@ Java(TM) SE Runtime Environment 18.9 (build 11.0.3+12-LTS)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.3+12-LTS, mixed mode)
 ```
 
-## linux安装tomcat
+### 安装Tomcat
 ```shell
 $ cd /home/zhc/java
 # https://tomcat.apache.org/download-90.cgi
@@ -76,7 +73,7 @@ $ sudo ./tomcat-9/bin/shutdown.sh
 ```
 [centos设置为系统启动](https://www.vultr.com/docs/how-to-install-apache-tomcat-8-on-centos-7)
 
-### idea配置tomcat服务
+### Idea配置tomcat服务
 * 修改虚拟路径
 ```shell
 # 以下两个配置需要保持一致
@@ -84,15 +81,15 @@ RUN/DEBUG Configurations -> Server -> URL http://localhost:8080/{ProjectName}_wa
 RUN/DEBUG Configurations -> Deployment -> Application content /{ProjectName}_war_exploded
 ```
 
-## 安装maven
+### 安装Maven
 
-{% post_link Java开发maven构建工具入门基础 %}
+ {% post_link Java开发Maven构建工具入门基础 %}
 
-## 安装gradle
+### 安装Gradle
 
-{% post_link Java开发gradle构建工具入门基础 %}
+ {% post_link Java开发Gradle构建工具入门基础 %}
 
-## 安装commons-logging
+### 安装Commons-logging
 
 ```shell
 # 从官网下载二进制文件包
@@ -102,13 +99,13 @@ $ tar -xzvf commons-logging-1.2-bin.tar.gz
 $ sudo mv commons-logging-1.2 /usr/java_jar/
 ```
 
-##  使用sdkman管理sdk
+###  使用sdkman管理sdk
 
 [sdkman](https://sdkman.io/install)
 
-# 打包
+## 打包
 
-## 创建jar包
+### 创建jar包
 
 ```shell
 # 编写应用程序
@@ -134,7 +131,7 @@ $ jar cvf hello.jar com/zhuohc/jar/HelloWorld.class  # 打包 参数c: 创建，
 正在添加: com/zhuohc/jar/HelloWorld.class(输入 = 441) (输出 = 302)(压缩了 31%)
 ```
 
-## 查看jar包信息
+### 查看jar包信息
 
 ```shell
 $ jar tvf hello.jar  # 查看 参数t： 查看
@@ -143,7 +140,7 @@ $ jar tvf hello.jar  # 查看 参数t： 查看
 441 Fri Aug 16 14:20:20 CST 2019 com/zhuohc/jar/HelloWorld.class
 ```
 
-## 提取jar包信息
+### 提取jar包信息
 
 ```shell
 $ jar xvf hello.jar # 解压 参数x： 提取extract
@@ -152,7 +149,7 @@ $ jar xvf hello.jar # 解压 参数x： 提取extract
 已解压: com/zhuohc/jar/HelloWorld.class
 ```
 
-## jar包清单文件
+### jar包清单文件
 
 ```shell
 创建清单文件

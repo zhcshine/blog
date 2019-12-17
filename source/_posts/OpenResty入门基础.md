@@ -33,3 +33,25 @@ $ nginx -s stop
 ## 配置
 
 > openResty的Nginx和普通Nginx配置一致
+
+## 常见错误
+
+### <font color="#d44375">Nginx与用户组权限问题</font>
+
+当前用户hanchang, nginx用户nginx
+```shell
+vim /etc/nginx/nginx.conf
+user hanchang;
+
+vim /etc/php-fpm.d/www.conf 
+user = hanchang
+group = nginx
+listen.owner = hanchang
+listen.group = nginx
+listen.mode = 0660
+```
+
+将当前用户加入nginx用户组
+```shell
+$ sudo usermod -a -G nginx hanchang
+```

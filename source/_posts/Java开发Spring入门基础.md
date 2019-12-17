@@ -2,13 +2,17 @@
 title: java开发spring入门基础
 date: 2019-08-16 15:17:48
 tags:
+- Java
+- Spring
+categories:
+- 后端
 ---
 
-# 构建项目基础
+## 构建项目基础
 {% post_link Java开发maven构建工具入门基础 %}
 {% post_link Java开发gradle构建工具入门基础 %}
 
-# 构建项目
+## 构建项目
 
 [spring项目初始化](https://start.spring.io/)
 

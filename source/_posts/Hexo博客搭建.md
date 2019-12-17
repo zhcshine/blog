@@ -4,17 +4,17 @@ date: 2019-08-19 08:57:45
 tags:
 ---
 
-# 安装基础环境
+## 安装
+### 基础环境
 
-{% post_link Node入门基础 %}
+ {% post_link Node入门基础 %}
 
-# 安装hexo
-
+### 安装Hexo
 ```shell
 npm install -g hexo-cli 
 ```
 
-# hexo部署配置
+### 部署配置
 
 ```shell
 sudo vim _config.yml
@@ -26,7 +26,7 @@ deploy:
   branch: master
 ```
 
-# hexo命令
+## 命令
 
 ```shell
 hexo init blog  # 初始化博客

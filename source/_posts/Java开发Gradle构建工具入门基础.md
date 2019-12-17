@@ -1,10 +1,14 @@
 ---
-title: java开发gradle构建工具入门基础
+title: Java开发Gradle构建工具入门基础
 date: 2019-08-16 10:40:45
 tags:
+- Java
+- Gradle
+categories:
+- 后端
 ---
 
-# linux安装gradle
+## Linux安装Gradle
 ```shell
 # 从官网下载二进制包
 # https://gradle.org/install/
@@ -49,9 +53,9 @@ OS:           Linux 4.19.49-1-MANJARO amd64
 
 ```
 
-# 配置gradle
+## 配置Gradle
 
-## 项目配置国内源
+### 项目配置国内源
 
 ```shell
 # 配置国内aliyun源
@@ -61,7 +65,7 @@ repositories {
 }
 ```
 
-## 全局配置国内源
+### 全局配置国内源
 ```shell
 vim ~/.gradle/init.gradle
 ```

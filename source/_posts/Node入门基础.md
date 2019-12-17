@@ -1,11 +1,16 @@
 ---
-title: node入门基础
+title: Node入门基础
 date: 2019-07-26 15:48:00
 tags:
+- Node
+- Javascript
+categories:
+- 前端
 ---
-# 安装
 
-**开发环境**
+## 安装
+
+### 开发环境
 
 [安装nvm](https://github.com/nvm-sh/nvm)
 
@@ -41,9 +46,10 @@ $ nvm use default  # 使用指定node版本
 $ npm --registry=https://registry.npm.taobao.org install cnpm -g
 ```
 
-# node.js 回调函数
+## 回调函数
 
 > Node.js 异步编程的直接体现就是回调。
+
 异步编程依托于回调来实现，但不能说使用了回调后程序就异步化了。
 回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都支持回调函数。
 例如，我们可以一边读取文件，一边执行其他命令，在文件读取完成后，我们将文件内容作为回调函数的参数返回。这样在执行代码时就没有阻塞或等待文件 I/O 操作。这就大大提高了 Node.js 的性能，可以处理大量的并发请求。
@@ -59,16 +65,18 @@ console.log("程序执行结束!");
 程序执行结束!
 ```
 
-# node.js 事件驱动
+## 事件驱动
 
 > Node.js 使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，然后去服务下一个web请求。
 当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户。
+
 这个模型非常高效可扩展性非常强，因为 webserver 一直接受请求而不等待任何读写操作。（这也称之为非阻塞式IO或者事件驱动IO）
 在事件驱动模型中，会生成一个主循环来监听事件，当检测到事件时触发回调函数。
 
-# node.js buffer 缓冲区
+## buffer 缓冲区
 
 > JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+
 但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
 在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js 处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer 类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。
 
@@ -83,18 +91,18 @@ node.js目前支持
 8. hex - 将每个字节编码为两个十六进制字符。
 
 
-# node.js stream 流
+## tream 流
 
 > Stream 是一个抽象接口，Node 中有很多对象实现了这个接口。例如，对http 服务器发起请求的request 对象就是一个 Stream，还有stdout（标准输出）。
 
 
-# node.js 模块
+## 模块
 
 ```js
 // 导出一个方法
 exports.world = function() {
   console.log('Hello World');
-}
+};
 
 //hello.js 
 function Hello() { 
@@ -107,11 +115,9 @@ function Hello() {
     }; 
 }
 module.exports = Hello;
-
 ```
 
-# node.js 全局对象
-
+## 全局对象
 ```js
 // 当前正在执行的脚本的文件名
 console.log( __filename );

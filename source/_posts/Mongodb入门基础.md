@@ -5,9 +5,11 @@ tags:
 -  数据库
 -  非关系型数据库
 -  Mongodb
+categories:
+- 运维
 ---
 
-# linux安装mongodb
+## 安装Mongodb
 
 ### arch linux
 
@@ -21,7 +23,7 @@ $ sudo systemctl start mongodb.service
 ```
 
 
-# 基础命令
+## 基础命令
 
 ```shell
 # 进入终端

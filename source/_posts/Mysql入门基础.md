@@ -1,16 +1,13 @@
 ---
-title: mysql入门基础
+title: Mysql入门基础
 tags:
-  - mysql
-url: 42.html
-id: 42
-comments: false
+- Mysql
 categories:
-  - 运维
+- 运维
 date: 2016-11-09 14:32:49
 ---
 
-# 安装mysql
+## 安装mysql
 
 ```shell
 // ubuntu16.04
@@ -19,13 +16,13 @@ sudo apt install mysql-client  # 服务器端不需要
 mysql_secure_installation
 ```
 
-# 查看mysql版本信息
+查看mysql版本信息
 ```shell
 mysql --version  
 mysql> show variables like '%version_%';
 ```
 
-# 数据库创建备份导入命令
+## 基本命令
 ```sql
 // 创建数据库  
 CREATE DATABASE `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;  
@@ -66,34 +63,31 @@ mysqldump  -uroot -p --databases test mysql #空格分隔
     
 // 导出到excel表格
 mysql   -uroot   -p   -e   "select   *   from   test.table2 "   >   d:a.xsl
-    
 ```
     
 ```sql
 // 导入数据库  
-
-mysql>use 数据库  
-mysql>set names utf8; （先确认编码，如果不设置可能会出现乱码，注意不是UTF-8）   
-mysql>source d:\wcnc_db.sql
+use 数据库  
+set names utf8; （先确认编码，如果不设置可能会出现乱码，注意不是UTF-8）   
+source d:\wcnc_db.sql
 ```
     
-# 查看表
 ```sql
 // 查看表结构
 show create table 表名;
 ```
 
 
-# 配置用户权限
+## 配置用户权限
 ```sql
 # 重置root密码并查看所有用户权限
- mysql> use mysql;
+use mysql;
 Database changed
-mysql> UPDATE user SET Password = PASSWORD('newpassword') WHERE user = 'root';
+UPDATE user SET Password = PASSWORD('newpassword') WHERE user = 'root';
 Query OK, 3 rows affected (0.02 sec)
 Rows matched: 3  Changed: 3  Warnings: 0
 
-mysql> SELECT Host,User,Password FROM mysql.user;
+SELECT Host,User,Password FROM mysql.user;
 +-----------+--------+-------------------------------------------+
 | Host      | User   | Password                                  |
 +-----------+--------+-------------------------------------------+
@@ -127,9 +121,9 @@ flush privileges;
 CREATE USER 'backuper'@'localhost' IDENTIFIED BY 'PASSWORD';
 GRANT SELECT, RELOAD, PROCESS, SHOW DATABASES, SUPER, LOCK TABLES, REPLICATION CLIENT, SHOW VIEW, EVENT ON *.* TO 'backuper'@'localhost';
 FLUSH PRIVILEGES;
-
-// 开启慢查询日志
+```
 ```bash 
+// 开启慢查询日志
 sudo vim /etc/my.cnf
 
 # slow_query_log
@@ -137,9 +131,10 @@ slow_query_log=on
 slow-query-log-file=/var/log/mysql/slow.log # 保证此文件属于mysql用户，mysql组，并可写权限
 long_query_time=1 # 超过1秒写入慢查询日志
 log-queries-not-using-indexes
-    
+```
+```sql
 // 查看是否开启mysql慢查询日志
->mysql show variables like "slow_query_log";
+show variables like "slow_query_log";
 
 // 设置密码过期时间
 SET GLOBAL default_password_lifetime = 0;  // 全局用户永不过期
@@ -148,9 +143,9 @@ ALTER USER 'root'@'localhost' PASSWORD EXPIRE INTERVAL 90 DAY;  // 单个用户
 ```
 
 
-# window服务器下自动备份
+## Window服务器下自动备份
 
-## 编写脚本
+### 编写脚本
 ```bash
 rem *******************************Code Start*****************************
 @echo off
@@ -161,10 +156,5 @@ mysqldump --opt -u root --password=abcdefg database > F:\FTP\BackupMysql\databas
 rem *******************************Code End*****************************
 ```
 
-## 定时任务  
+### 定时任务  
 注意在操作中填写脚本并在起始于写入脚本所在盘符E:\
-
-## 删除mysql
-
-> 在服务里找到mysql服务，停止使用  
-> 控制面板中卸载mysql 注册表文件删除： HKEY\_LOCAL\_MACHINE/SYSTEM/ControlSet001/Services/Eventlog/Application/MySQL 目录删除; HKEY\_LOCAL\_MACHINE/SYSTEM/ControlSet002/Services/Eventlog/Application/MySQL 目录删除; HKEY\_LOCAL\_MACHINE/SYSTEM/CurrentControlSet/Services/Eventlog/Application/MySQL 目录删除; 在硬盘和注册表中搜索mysql并删除掉

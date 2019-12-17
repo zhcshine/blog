@@ -1,13 +1,14 @@
 ---
-title: minicat-manjaro-18.0.4-dev
+title: Manjaro开发环境
 date: 2019-07-24 14:11:44
 tags: 
-  - manjaro
-  - linux
+- Manjaro
+- Linux
+categories:
+- 办公
 ---
 
-# 添加中科大源
-
+### 添加中科大源
 ```shell
 $ sudo vi /etc/pacman.conf
 ```
@@ -18,36 +19,35 @@ SigLevel = Optional TrustedOnly
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
-# 导入GPG Key
-
+### 导入GPG Key
 ```shell
 $ sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
 ```
-# 安装基本开发编译软件
 
+### 安装基本开发编译软件
 ```shell
 sudo pacman -S --needed base-devel
 ```
-# 安装git
 
+### 安装Git
 ```shell
 $ sudo pacman -S git
 ```
 
-# 安装chrome
+### 安装Chrome
 
 ```shell
 $ sudo pacman -S google-chrome
 ```
 
-# 安装搜狗拼音输入法
+### 安装搜狗拼音输入法
 
 ```shell
 $ sudo pacman -S fcitx-im #默认全部安装
 $ sudo pacman -S fcitx-configtool
 $ sudo pacman -S fcitx-sogoupinyin
 ```
-# 编辑输入法配置文件
+### 编辑输入法配置文件
 
 ```shell
 $ sudo nano ~/.xprofile
@@ -58,7 +58,7 @@ export XMODIFIERS="@im=fcitx"
 # 重启后输入法就可以正常使用。
 ```
 
-# 安装vim
+### 安装vim
 
 ```shell
 $ sudo pacman -S vim
@@ -69,7 +69,7 @@ $ sudo pacman -S vim
 $ curl https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc > ~/.vimrc
 ```
 
-# 安装tmux和.tmux
+### 安装tmux和.tmux
 
 ```shell
 $ sudo pacman -S tmux
@@ -79,14 +79,14 @@ $ ln -s -f .tmux/.tmux.conf
 $ cp .tmux/.tmux.conf.local .
 ```
 
-# 安装zsh和oh-my-zsh
+### 安装zsh和oh-my-zsh
 
 ```shell
 $ sudo pacman -S zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-# 安装yaourt
+### 安装yaourt
 
 ```shell
 $ sudo pacman -S --needed base-devel git wget yajl
@@ -99,7 +99,7 @@ $ cd yaourt/
 $ makepkg -si
 ```
 
-# 安装shadowsocks
+### 安装shadowsocks
 
 ```shell
 $ git clone https://aur.archlinux.org/shadowsocks-qt5-git.git
@@ -108,7 +108,7 @@ $ less PKGBUILD  # 查看
 $ makepkg -si  # 安装
 ```
 
-# 设置ssh连接不断开
+### 设置ssh连接不断开
 
 ```shell
 # vim ~/.ssh/config
@@ -116,22 +116,15 @@ Host *
     ServerAliveInterval 60
 ```
 
-# 安装jetbrain全家桶
+### 安装Jetbrain全家桶
 
-[jetbrain激活参考地址](http://idea.lanyus.com/)
+<font color="#d44375">请支持正版</font>
 
-```shell
-$ sudo vim /etc/hosts
-# 添加以下两行代码
-0.0.0.0 account.jetbrains.com
-0.0.0.0 www.jetbrains.com
-```
+### 安装python开发环境
 
-# 安装python开发环境
+ {% post_link Python入门基础 python开发环境 %}
 
-{% post_link Python入门基础 python开发环境 %}
-
-# 安装rabbitmq
+### 安装Rabbitmq
 
 ```shell
 $ sudo pacman -S rabbitmq rabbitmqadmin
@@ -140,13 +133,12 @@ $ sudo systemctl start rabbitmq.service  # 启动
 $ rabbitmq-plugins enable rabbitmq_management  # 开启web界面
 ```
 
-# 安装redis
+### 安装Redis
 ```shell
 $ sudo pacman -S redis
 $ sudo systemctl enable redis.service  # 开机启动
 $ sudo systemctl start redis.service  # 启动
 ```
-
 设置密码
 
 ```shell
@@ -154,14 +146,14 @@ $ sudo vim /etc/redis.conf
 redispassword password
 ```
 
-# 安装node
+### 安装node
 
-{% post_link Node入门基础 python开发环境 %}
+ {% post_link Node入门基础 python开发环境 %}
 
-# 其他软件清单
+### 其他软件清单
 
-> peek 录制gif软件
+* peek 录制gif软件
 
-> github desktop github客户端
+* github desktop github客户端
 
-> postman
+* postman
