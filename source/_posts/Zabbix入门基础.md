@@ -1,43 +1,49 @@
 ---
-title: zabbix入门基础
-url: 615.html
-id: 615
-comments: false
+title: Zabbix入门基础
 categories:
-  - 后端
+- 后端
 date: 2018-11-16 17:40:04
 tags:
+- Zabbix
 ---
 
-# 安装服务器端
+## 安装
 
-[官方](https://www.zabbix.com/download) 1\. 根据实际情况选择数据库 2. 根据实际情况选择操作系统
+### 服务器端
 
-# 汉化
+[官方](https://www.zabbix.com/download) 
 
-![](/wp-content/uploads/2018/11/2018-11-16-17-36-53屏幕截图.png) 错误提示
+1. 根据实际情况选择数据库 
+2. 根据实际情况选择操作系统
 
-> You are not able to choose some of the languages, because locales for them are not installed on the web server.
+汉化
 
-    # 选中zh-CN UTF-8
-    sudo dpkg-reconfigure locales
-    sudo service apache2 restart
-    
+![](/wp-content/uploads/2018/11/2018-11-16-17-36-53屏幕截图.png) 
 
-# 安装客户端
+错误提示
 
-[官方](https://www.zabbix.com/documentation/3.2/manual/installation/install_from_packages/agent_installation) [参考](https://tecadmin.net/install-zabbix-agent-on-centos-rhel/)
+<font color="#d44375">You are not able to choose some of the languages, because locales for them are not installed on the web server.</font>
+```shell
+# 选中zh-CN UTF-8
+$ sudo dpkg-reconfigure locales
+$ sudo service apache2 restart
+```
 
-# 设置邮件报警
+### 安装客户端
 
-Media types ![](/wp-content/uploads/2018/11/zabbix-email.png) ![](/wp-content/uploads/2018/11/zabbix-email-1.png)
+[官方](https://www.zabbix.com/documentation/3.2/manual/installation/install_from_packages/agent_installation) 
 
-# 交换分区错误问题
+[参考](https://tecadmin.net/install-zabbix-agent-on-centos-rhel/)
 
-    Lack of free swap space
-    
+### 交换分区错误问题
+
+<font color="#d44375">Lack of free swap space</font>
 
 现在的云主机默认没有交换分区 Configuration->Templates->Template OS Linux->Triggers->Lack of free swap space on {HOST.NAME}->Expression
 
-    {Template OS Linux:system.swap.size[,pfree].last(0)}<50改成
-    {Template OS Linux:system.swap.size[,pfree].last(0)}<50 and {Template OS Linux:system.swap.size[,free].last(0)}<>0
+```shell
+{Template OS Linux:system.swap.size[,pfree].last(0)}<50改成
+```
+```shell
+{Template OS Linux:system.swap.size[,pfree].last(0)}<50 and {Template OS Linux:system.swap.size[,free].last(0)}<>0
+```

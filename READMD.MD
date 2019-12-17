@@ -10,3 +10,4 @@ hexo n post_title
 ```
 
 <font color="#d44375">错误</font>
+<font color="#2bbc8a">提醒</font>

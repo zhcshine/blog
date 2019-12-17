@@ -9,8 +9,17 @@ categories:
 
 ## 安装
 
-### 安装
+### 服务器端anzhaung
 
+[官方推荐](https://help.ubuntu.com/lts/serverguide/subversion.html.en/)
+
+### Ubuntu安装
+```shell
+# 安装包
+sudo apt install subversion apache2 libapache2-svn
+```
+
+### ArchLinux安装
 ```shell
 # 安装
 $ sudo yum install subversion

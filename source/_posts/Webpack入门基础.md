@@ -2,19 +2,20 @@
 title: Webpack入门基础
 date: 2019-11-08 15:44:17
 tags:
--  前端
 -  Webpack
 -  Nodejs
+categories:
+- 前端
 ---
 
-### 安装
+## 安装
 
 ```shell
 $ cnpm install webpack -g
 $ cnpm install webpack-cli -g
 ```
 
-### webpack基础命令
+## 基础命令
 ```sell
 # 目录结构
 .
@@ -52,7 +53,7 @@ $ webpack src/js/app.js -o dist/js/app.js --mode=production
 * 不能将js的es6基本语法转化为es5以下语法
 
 
-### 配置
+## 配置
 
 ```js
 // webpack.config.js
@@ -74,7 +75,7 @@ module.exports = {
 $ webpack
 ```
 
-### webpack js语法检查
+### 语法检查
 
 ```shell
 # 安装loader
@@ -132,7 +133,7 @@ module.exports = {
 }
 ```
 
-### webpack js语法转换
+### 语法转换
 
 ```shell
 $ cnpm install babel-loader @babel/core @babel/preset-env --save-dev
@@ -172,7 +173,7 @@ module.exports = {
 };
 ```
 
-### webpack打包html文件
+### 打包html文件
 
 ```shell
 $ cnpm install html-webpack-plugin --save-dev
@@ -232,7 +233,7 @@ module.exports = {
 
 ```
 
-### webpack 自动编译打包运行
+### 自动编译打包运行
 
 ```shell
 $ cnpm install webpack --save-dev

@@ -61,7 +61,7 @@ http://Your_Server_IP:15672/api
 ## 常见错误处理
     
 ### 文件大小限制
-> Recovering 69477 queues, available file handles: 924. Please increase max open file handles limit to at least 69477!
+<font color="#d44375">Recovering 69477 queues, available file handles: 924. Please increase max open file handles limit to at least 69477!</font>
 
 ```shell
 # 打开文件大小限制
@@ -74,8 +74,7 @@ LimitNOFILE=300000
 ```
 
 ### Mnesia is overloaded
-
-> Mnesia is overloaded: {dump_log,write_threshold}
+<font color="#d44375">Mnesia is overloaded: {dump_log,write_threshold}</font>
 
 ```shell
 # 编辑配置文件
