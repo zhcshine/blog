@@ -62,7 +62,7 @@ $ sudo apt-get install aria2
 ```
 在uget gui里编辑插件，选择aria2
 
-### wine qq（现在推荐docker安装qq）
+### Wine qq（现在推荐docker安装qq）
 
 安装wine1.7以上版本  
 安装WineQQ7.8-20151109-Longene.deb版本  
@@ -74,6 +74,31 @@ $ sudo dpkg -l | grep qq  # 找到安装包名称
 $ sudo dpkg -r wine-qq7.8-longeneteam # 卸载
 ```
 
+### Docker安装QQ
+
+下载镜像文件 https://hub.docker.com/r/bestwu/qq/
+```shell
+$ sudo docker pull bestwu/qq # 速度慢可以换镜像源
+```
+```shell
+$ vim qq.sh
+```
+```shell
+$ sudo docker run -d --name qq --device /dev/snd --net=host \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /home/YOURUSERNAME/TencentFiles:/TencentFiles \ # 此处数据卷的目录填写自己的目录
+    -e DISPLAY=unix$DISPLAY \
+    -e XMODIFIERS=@im=fcitx \
+    -e QT_IM_MODULE=fcitx \
+    -e GTK_IM_MODULE=fcitx \
+    -e AUDIO_GID=63 \
+    -e GID=1000 \
+    -e UID=1000 \
+    bestwu/qq:latest # 此处版本自行选择，作者提供了im (QQ) light,latest (QQLight) office (TIM)三个版本
+```
+```shell
+$ ./qq.sh
+```
 ### elinks 纯文本浏览器
 ```shell
 $ sudo apt-get install elinks   # 安装
