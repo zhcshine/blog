@@ -22,6 +22,12 @@ mysql --version
 mysql> show variables like '%version_%';
 ```
 
+## 安装MyCli
+[官网](https://www.mycli.net/)
+```shell
+pip install mycli
+```
+
 ## 基本命令
 ```sql
 // 创建数据库  
@@ -42,7 +48,7 @@ truncate tableName;
 DROP TABLE test;
     
 // 删除表内容，保留表结构  
-mysql> TRUNCATE TABLE `tabel_name`;
+TRUNCATE TABLE `tabel_name`;
     
 // 删除表并重置主键，不会留下日志，相当于删除表并重建    
 TRUNCATE TABLE `animal_cell_attribute` 

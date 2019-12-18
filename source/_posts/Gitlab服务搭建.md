@@ -4,7 +4,7 @@ categories:
 - 运维
 date: 2017-06-19 14:18:48
 tags:
-- Github
+- Git
 - Gitlab
 ---
 
