@@ -20,6 +20,16 @@ $ sudo apt-get update
 $ sudo apt-get install sublime-text-installer
 ```
 
+
+## 插件
+
+### Package Control
+
+通过`Ctrl+``快捷键或者`View > Show Console`菜单打开控制台，复制粘贴如下代码回车即可。
+```python
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+```
+
 ### 插件下载地址
 
 [https://packagecontrol.io/](https://packagecontrol.io/)
@@ -28,10 +38,6 @@ $ sudo apt-get install sublime-text-installer
 > 请支持正版
 
 ## 设置
-### 安装Package Control
-```shell
-import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
-```
 
 ### 设置空格缩进
 ```json
@@ -61,7 +67,11 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 **SublimeCodeIntel(跳转到自定义函数)**
 **HTML5(html5的snippets)**  
 **Alignment(自动对齐插件)**  
-**SFTP(ftp上传)需要配置对应的ftp路径等信息** **git** **jquery(jquery snippets)** **SaSS(可以支持sass)** **DocBlockr（块状注释）**
+**SFTP(ftp上传)需要配置对应的ftp路径等信息** 
+**git** 
+**jquery(jquery snippets)**
+**SaSS(可以支持sass)**
+**DocBlockr（块状注释）**
 
 ## ubuntu安装中文输入法
 

@@ -9,7 +9,7 @@ categories:
 
 ## 安装
 
-### Centos7.2
+### CentOs7.2
 ```shell
 # https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce
 # 卸载旧版本
